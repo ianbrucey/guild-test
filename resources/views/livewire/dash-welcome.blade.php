@@ -12,7 +12,7 @@
     </div>
 
     <table class="table-auto w-full text-center px-20 mb-20">
-        <div class="m-4">
+        <div class="m-4 shadow-xl">
             <hr>
             <h1 class="text-center text-xl p-10">Active Applications</h1>
             <hr>
