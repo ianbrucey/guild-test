@@ -3,15 +3,28 @@ Setup Instructions
 RUN:
 - mkdir {project}; cd {project};
 - git clone {repo} .
+- cp .env.example .env
 END RUN:
 
-*** update .env file with proper database credentials
+*** 
+update .env file with proper database credentials.
+I'm using docker but...
+for ex, if you had a service like MAMP:
+
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=8889
+    DB_DATABASE=guild
+    DB_USERNAME=root
+    DB_PASSWORD=root
+
+***
 
 RUN:
 - composer install
-- php artisan key:gen (if needed)
-- npm install && npm run dev
+- php artisan key:gen 
 - php artisan migrate
+- npm install && npm run dev
 END RUN:
 
 

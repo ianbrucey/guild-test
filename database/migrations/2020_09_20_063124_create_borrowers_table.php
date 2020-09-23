@@ -20,7 +20,7 @@ class CreateBorrowersTable extends Migration
             $table->string('email');
             $table->foreignId('loan_application_id');
             $table->foreignId('user_id');
-            $table->enum('borrower_type', ['0, 1']); // co-borrower, primary
+            $table->enum('borrower_type', [0, 1]); // co-borrower, primary
             $table->integer('annual_salary');
             $table->integer('bank_account_value')->nullable();
             $table->timestamps();
