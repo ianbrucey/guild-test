@@ -3,20 +3,25 @@ Setup Instructions
 RUN:
 - mkdir {project}; cd {project};
 - git clone {repo} .
+
 END RUN:
 
 *** update .env file with proper database credentials
 
 RUN:
+
 - composer install
 - php artisan key:gen (if needed)
 - npm install && npm run dev
 - php artisan migrate
+
 END RUN:
 
 
 To authenticate from the API...
+
 =======================================
+
 method: POST
 
 endpoint: {hostUrl}/api/login
@@ -30,12 +35,14 @@ body: {
     "email": {existing user's email},
     "password": "password"
 }
-=======================================
 
+=======================================
 
 
 TOKEN SHOULD BE COPIED FROM RESPONSE. EXAMPLE:
+
 =======================================
+
 {
     "user": {
         "id": 578,
@@ -54,12 +61,15 @@ TOKEN SHOULD BE COPIED FROM RESPONSE. EXAMPLE:
 
 
 All subsequent API calls should contain the following header structure:
+
 =======================================
+
 {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Authorization": "Bearer {Authentication Token. no quotes}"
 }
+
 =======================================
 
 To run unit tests:
